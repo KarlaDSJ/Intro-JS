@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cita</title>
+		<meta charset="UTF-8"/>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function validar(var1,var2,cadena){
+			do
+			{
+				cosa=prompt(cadena);
+			}
+			while(cosa<var1 || cosa>var2)
+			return cosa;
+		}
+		var agendar=[];
+		var i=0;
+			var cita={
+				time:2,
+				mes:1,
+				dia:13,
+				nom:"nombre",
+				set:function(h,m,d,n){
+					this.time=h;
+					this.mes=m;
+					this.dia=d;
+					this.nom=n;
+				}	
+			}
+			var calendario={
+				agregar:function(){
+					var igual=0;
+					var cadena=cita.time+" hr del "+cita.mes+" el día "+cita.dia+" con "+cita.nom;
+					for(cot in agendar){
+						var com=agendar[cot].localeCompare(cadena);
+						if(com==0)
+							igual++;
+					}
+					if(igual==0){
+						agendar[i]=cadena;
+						window.alert("Cita agregada a las "+agendar[i]);
+						i++;
+					}
+					else 
+						window.alert("La cita ya existe");
+				}
+			}
+			do
+			{
+				res=prompt("Escoja un número(1.Crear cita, 2.Agregar al calendario)");
+				if(res==1)
+				{
+					time=validar(0,24,"time (24times)");
+					mes=validar(1,12,"Mes");
+					dia=validar(1,31,"Día");
+					nom=prompt("Nombre");
+					cita.set(time,mes,dia,nom);
+					window.alert("Cita a las"+this.time+" hr del "+this.mes+" el día "+this.dia+" con "+this.nom);
+				}
+				else
+				{
+					if(res==2 && cita.nom!="nombre")
+						calendario.agregar();
+					else
+						window.alert("No has creado una cita");
+				}
+				var edit=prompt("otro?(si/no)");
+			}
+			while(edit=="si");
+		</script>
+	</body>
+</html>

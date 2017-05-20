@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var r;
+			var nave={
+				size:5,
+				municiones:10,
+				estado:"Excelente",
+				disparar:function(){
+						if(this.municiones!=0){
+							this.municiones=this.municiones-1;
+							window.alert(this.municiones);
+						}
+						else 
+							window.alert("No hay municiones");
+					},
+				velocidad:function(ve){
+						if(ve=="aumentar")
+							window.alert("acelerando");
+						else
+							window.alert("desacelerando");
+					},
+				tripulacion:{
+					nacionalidad:"Mexicano",
+					numero:"5",
+					reparar:function(){
+						this.estado="Excelente";
+						window.alert("Tu estado ahora es:"+this.estado);
+					},
+					tamaño:function(ta){
+						if(ta=="aumentar"){
+								nave.size=nave.size+1;
+								window.alert(nave.size);
+						}
+						else{ 
+							if(this.size!=1){
+								nave.size=nave.size-1;
+								window.alert(nave.size);
+							}
+							else
+								window.alert("No puedes disminuir más");
+						}
+					}
+				},
+				set:function(est){
+					this.estado=est;
+				}
+			}
+			var est=prompt("Estado:");
+			if (est!="deplorable")
+			{
+				nave.set(est);
+				window.alert(nave.estado+nave.size+"m"+nave.municiones+nave.tripulacion.nacionalidad+nave.tripulacion.numero);
+				do
+				{
+					var deseo=prompt("que deseas modificar?(disparar,velocidad,reparar o tamaño)");
+					switch(deseo){
+				         case"velocidad":
+							var ve=prompt("aumentar o disminuir");
+							nave.velocidad(ve);
+							break;
+						case"disparar":
+							nave.disparar();
+							break;
+						case"reparar":
+							nave.tripulacion.reparar();
+							break;
+						case"tamaño":
+							var ta=prompt("aumentar o disminuir");
+							nave.tripulacion.tamaño(ta);
+							break;
+					}
+					var res=prompt("editar otro?");
+				}
+				while(res=="si")
+			}
+			else
+				window.alert("la nave no se puede salvar");
+		</script>
+	</body>
+</html>

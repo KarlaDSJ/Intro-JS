@@ -1,0 +1,3 @@
+Hola soy Karla, perdón la tardanza, aun me falta una
+para la de la base de datos primero tienen que crear una que se llame 
+usuarios y ya luego el archivo y pues, ya no tengo las dos primeras 

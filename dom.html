@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DOM</title>
+		<meta charset="UTF-8"/>
+		<style>
+			div{
+				background-color:pink;
+				color:white;
+				margin:40px;
+				padding:40px;
+			}
+			h1,h2{
+				text-align:center;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<div id="hola">
+			<h1>HOLA</h1>
+		</div>
+		<div id="cm">
+			<h2>¿Cómo te llamas?</h2>
+			<h2><input id="np"type="text" name="name"/>
+			<input id="sub" type="submit"/></h2>
+		</div>
+		<div id="ld">
+			<h2>Lindo Día</h2>
+		</div>
+		<script type="text/javascript">
+			var hola=document.getElementById("hola");
+			var cm=document.getElementById("cm");
+			var ld=document.getElementById("ld");
+			var np=document.getElementById("np");
+			var sub=document.getElementById("sub");
+			var n=function(){
+								hola.innerHTML=("<h1>Hola</h1>");
+								ld.innerHTML=("<h2>Lindo día</h2>");
+								cm.style.backgroundColor="pink";
+							}
+			np.onmousedown=function(){
+								hola.innerHTML=("<h1>Apretando</h1>");
+								cm.style.backgroundColor="fuchsia";
+							}
+			np.onmouseup=function(){
+								hola.innerHTML=("<h1>Hola</h1>");
+								cm.style.backgroundColor="pink";
+							}
+			np.onclick=function(){
+								hola.innerHTML=("<h1>Doble click para quitar imagen</h1>");
+								ld.innerHTML=("<img src='click.png' style='position:relative; left:40%;'/>");
+							}
+			cm.oncontextmenu=function(){
+								hola.innerHTML=("<h1>Menu</h1>");
+							}
+			sub.onmouseenter=function(){
+								hola.innerHTML=("<h1>Enviar?</h1>");
+								cm.style.backgroundColor="red";
+							}
+			sub.onmouseleave=n;
+			np.ondblclick=n;
+			np.onkeydown=function(){
+								ld.innerHTML=("<h2>Pulsando tecla</h2>");
+								cm.style.backgroundColor="purple";
+							}
+			np.onkeypress=function(){
+								hola.innerHTML=("<h1>Escribiendo (...)</h1>");
+							}
+			np.onkeyup=n;
+			np.onchange=function(){
+								ld.innerHTML=("<h2>Cambiaste algo</h2>");
+							}
+			cm.oninput=function(){
+					ld.innerHTML=("<img src='input.png' style='position:relative; left:40%;'/>");
+			}
+			document.body.onresize=function(){
+				hola.innerHTML=("<h1>Página reajustada</h1>");
+			}
+			document.body.onscroll=function(){
+				ld.innerHTML=("<h2>Hiciste scroll</h2>");
+			}
+		</script>
+	</body>
+</html>

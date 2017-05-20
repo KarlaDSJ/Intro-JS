@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ajax</title>
+		<meta charset="UTF-8"/>
+		<script type="text/javascript" src="jquery-3.2.1.js"></script>
+		<style>
+			td{
+				border:solid;
+			}
+		</style>
+	</head>
+	<body>
+		<button>Oprime</button>
+		<table>
+			<tr>
+			</tr>
+		<table>
+		<script type="text/javascript">
+		var x;
+			$.ajax({
+				url:"json.php",
+				type:"GET",
+				data:{
+					m: x
+				},
+				success:function(resul){
+					$("button").click(function(){
+						resul=resul.split('","');
+						for(var i=0;i<5;i++){
+							resul[i]=resul[i].split(' ');
+							for(var m=0;m<3;m++)
+								$("table:last").add("<td>"+resul[i][m]+"</td>").appendTo(document.body);
+							$("table").add("<tr></tr>").appendTo(document.body);
+						}
+						console.log(resul);
+					});
+				}
+			});
+		</script>
+	</body>
+</html>

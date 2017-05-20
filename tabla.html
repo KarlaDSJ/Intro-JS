@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Would you Kindly?</title>
+		<meta charset="UTF-8"/>
+		<style>
+			td{
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>Nombre</td>
+				<td>AP Paterno</td>
+				<td>AP Materno</td>
+				<td># Cuenta</td>
+				<td>Boton</td>
+			</tr>
+			<tr id="uno">
+				<td>Aaron</td>
+				<td>Gaytan</td>
+				<td>Nava</td>
+				<td>316014658</td>
+				<td><button id="Aaron">Aaron</button></td>
+			</tr>
+			<tr id="dos">
+				<td>Fer</td>
+				<td>Sanchez</td>
+				<td>Guzman</td>
+				<td>316147033</td>
+				<td><button id="Fer">Ferts</button></td>
+			</tr>
+			<tr id="tres">
+				<td>David</td>
+				<td>Perez</td>
+				<td>Hinojosa</td>
+				<td>316048033</td>
+				<td><button id="David">David</button></td>
+			</tr>
+			<tr id="cuatro">
+				<td>Karla</td>
+				<td>Salas</td>
+				<td>Jimenez</td>
+				<td>316189974</td>
+				<td><button id="Karla">Karla</button></td>
+			</tr>
+		</table>
+		<div id="dv">Resultado:</div>
+		<script type="text/javascript">
+			var arn=document.getElementById("Aaron");
+			var fer=document.getElementById("Fer");
+			var dav=document.getElementById("David");
+			var krl=document.getElementById("Karla");
+			var el=document.createElement("div");;
+			var l;
+			fer.onclick=function(){
+								var f=document.getElementById("dos").childNodes;
+								l=document.body.appendChild(el);
+								l.innerHTML=(f[1].innerHTML+" "+f[3].innerHTML+" "+f[5].innerHTML+" "+f[7].innerHTML);
+							}
+			arn.onclick=function(){
+								var f=document.getElementById("uno").childNodes;
+								l=document.body.appendChild(el);
+								l.innerHTML=(f[1].innerHTML+" "+f[3].innerHTML+" "+f[5].innerHTML+" "+f[7].innerHTML);
+							}
+			dav.onclick=function(){
+								var f=document.getElementById("tres").childNodes;
+								l=document.body.appendChild(el);
+								l.innerHTML=(f[1].innerHTML+" "+f[3].innerHTML+" "+f[5].innerHTML+" "+f[7].innerHTML);
+							}
+			krl.onclick=function(){
+								var f=document.getElementById("cuatro").childNodes;							
+								l=document.body.appendChild(el);
+								l.innerHTML=(f[1].innerHTML+" "+f[3].innerHTML+" "+f[5].innerHTML+" "+f[7].innerHTML);
+							}
+		</script>
+	</body>
+</html>

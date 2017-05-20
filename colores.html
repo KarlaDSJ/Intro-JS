@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Colores</title>
+		<meta charset="UTF-8"/>
+		<style>
+			div{
+				display:inline;
+				padding:5px;
+				background-color:rgb(255,255,255);
+			}
+		</style>
+		<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var cot=0;
+			var cl=255;
+			var ot=0;
+			var clr;
+			for(cot=0;cot<35;cot++){
+				cl=cl-5;
+				ot=ot+5;
+				var el=document.createElement("div");
+				el.style.backgroundColor='rgb(255,'+cl+','+ot+')';
+				document.body.appendChild(el);
+				$("div").mouseover(function(){
+					clr=$(this).css("background-color");
+					$("body").css("background-color",clr);
+				})
+				el.onmouseout=function(){
+					document.body.style.backgroundColor='rgb(255,255,255)';
+				}
+			}
+		</script>
+	</body>
+</html>
