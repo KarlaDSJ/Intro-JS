@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Hijos</title>
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	<style>
+		pre,li{
+			display:inline;
+		}
+	</style>
+</head>
+<body>
+	<div id="division">
+		<button onclick="lista();">lista</button>
+		<button onclick="elemento();">elemento</button><br/>
+	</div>
+	<script type="text/javascript">
+	var m=1;
+		function elemento() {
+				for(i=0;i<m;i++)
+					$("div").append("<pre>         </pre>");
+			node=document.createElement("button");
+			node.appendChild(document.createTextNode("lista"));
+			node.setAttribute("onclick", "lista();")
+			document.getElementById('division').appendChild(node);
+			
+			node=document.createElement("button");
+			node.appendChild(document.createTextNode("elemento"));
+			node.setAttribute("onclick", "elemento();")
+			document.getElementById('division').appendChild(node);
+			
+			$("div").append("<br/>");
+			m++;
+		}
+		function lista() {
+				for(i=0;i<m;i++)
+					$("div").append("<pre>         </pre>");
+			node=document.createElement("li");
+			node.appendChild(document.createTextNode("lista"));
+			document.getElementById('division').appendChild(node);
+			$("div").append("<br/>");
+		}
+	</script>
+</body>
+</html>
